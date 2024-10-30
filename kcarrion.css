@@ -329,10 +329,11 @@ html {
 
     .contentinfo {
         padding: .5rem 1.7rem;
+        width: 100%;
     }
 
     .date {
-        width: 100px;
+        cursor: none;
     }
 
     .date::after {
@@ -366,7 +367,6 @@ html {
 
     .textinfo {
         padding: 0 0 0 2rem;
-        width: 230px;
     }
 
     .name-info {
