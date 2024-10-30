@@ -38,7 +38,7 @@ html {
     position: relative;
 }
 
-.body{
+.body {
     width: 900px;
     margin: 0 auto;
     display: flex;
@@ -49,7 +49,7 @@ html {
 
 /* left */
 
-.header{
+.header {
     display: block;
     background-color: #bbb1db47;
     width: 300px;
@@ -57,22 +57,22 @@ html {
     border-right: 1px solid var(--bg-primary);
 }
 
-.photo{
+.photo {
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.imgkarls{
+.imgkarls {
     height: 80%;
 }
 
-.textresume{
+.textresume {
     padding: 2rem 2rem 1rem 2rem;
 }
 
-.titleresume{
+.titleresume {
     font-weight: 500;
     border-bottom: 1px solid grey;
     display: inline;
@@ -86,21 +86,25 @@ html {
     margin: 0 .5rem 0 0;
 }
 
-.resume{
+.resume {
     margin: .5rem 0;
     font-size: .9rem;
 }
 
 /* right */
 
-.main{
+.main {
     display: block;
     background-color: #fff;
     width: 600px;
     min-height: 100vh;
 }
 
-.sectionheader{
+.noneL{
+    display: none;
+}
+
+.sectionheader {
     border-bottom: 1px solid var(--bg-primary);
     height: 150px;
     display: flex;
@@ -109,49 +113,92 @@ html {
     align-items: center;
 }
 
-.titlename{
+.titlename {
     width: 300px;
     padding: 0 0 0 1.5rem;
 }
 
-.name{
+.name {
     font-weight: 500;
     font-size: 1.8rem;
     color: #785dc8;
 }
 
-.fullname{
+.fullname {
     font-size: 1.3rem;
 }
 
-.link{
+.link {
     text-decoration: none;
 }
 
-.place-info{
+.place-info {
     font-weight: 500;
 }
 
-.datacontac{
+.datacontac {
     display: flex;
     flex-flow: column nowrap;
     padding: 0 2rem 0 0;
     text-align: end;
 }
 
-.formacion{
+.formacion {
     font-weight: 500;
     padding: 1.5rem 3rem .8rem;
     color: #584592;
+    position: relative;
 }
 
-.contentinfo{
+.icondes{
+    position: absolute;
+    top: 23px;
+    left: 28px;
+    rotate: 90deg;
+    cursor: pointer;
+    animation-name: colors;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes colors {
+    0%{
+        rotate: 90deg;
+    }
+    50%
+    {
+        rotate: 180deg;
+    }
+100%{
+    rotate: 90deg;
+    }
+    
+}
+
+.up{
+    display: inline;
+}
+
+.down{
+    display: none;
+}
+
+.changeup{
+    display: inline;
+}
+
+.changedown{
+    display: none;
+}
+
+
+.contentinfo {
     display: flex;
     flex-flow: row nowrap;
     padding: .5rem 3rem;
 }
 
-.date{
+.date {
     position: relative;
     border-right: 1px solid gray;
     font-size: .8rem;
@@ -161,10 +208,12 @@ html {
 
 .date::after {
     position: absolute;
-    top:0;
+    top: 0;
     right: -13px;
     content: '✔️';
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
@@ -173,29 +222,29 @@ html {
     text-align: center;
 }
 
-.date-info{
+.date-info {
     font-size: .9rem;
     font-style: italic;
     padding: .4rem .3rem;
 }
 
-.subtime{
+.subtime {
     font-size: .8rem;
     font-style: italic;
     padding: 0 0 0 .3rem;
 }
 
-.textinfo{
-    padding: 0 0 0 3rem ;
+.textinfo {
+    padding: 0 0 0 3rem;
     width: 370px;
 }
 
-.name-info{
+.name-info {
     font-weight: 500;
     color: #785dc8;
 }
 
-.action{
+.action {
     padding: 0 0 0 1.2rem;
     position: relative;
     font-size: .9rem;
@@ -203,7 +252,7 @@ html {
 
 .action::before {
     position: absolute;
-    top:0;
+    top: 0;
     left: -1px;
     content: '-';
     display: inline-block;
@@ -213,70 +262,170 @@ html {
     color: black;
 }
 
-.sep{
+.sep {
     margin-top: .5rem;
 }
 
-.lineh{
+.lineh {
     line-height: 1.6;
 }
 
-.foo{
+.foo {
     margin: 5rem 0;
 }
 
 @media screen and (max-width: 700px) {
 
-    .body{
-        width: 350px;
-        font-size: .8rem;
+    .body {
+        width: 100%;
     }
 
-    .header{
-        width: 120px;
+    .header {
+        display: none;
+    }
+
+
+    /* right */
+
+    .main {
+        width: 100%;
         min-height: 100vh;
     }
 
-    .photo{
-        height: 100px;
+    .sectionheader {
+        border-bottom: 1px solid var(--bg-primary);
+        height: 130px;
     }
-    
-    .imgkarls{
-        height: 80%;
+
+    .titlename {
+        width: 50%;
+        padding: 0 0 0 1.5rem;
     }
-    
-    .textresume{
-        padding: 1rem 1rem .5rem 1rem;
-    }
-    
-    .titleresume{
+
+    .name {
         font-weight: 500;
-        font-size: .7rem;
-        border-bottom: 1px solid grey;
-        display: inline;
+        font-size: 1.2rem;
     }
-    
-    .checked::before {
-        content: '✔️';
-        display: inline-block;
-        width: 1rem;
-        height: .5rem;
-        margin: 0 .5rem 0 0;
-    }
-    
-    .resume{
-        margin: .5rem 0;
+
+    .fullname {
         font-size: .9rem;
     }
 
-
-    /* two */
-
-    .main{
-        width: 230px;
-        min-height: 100vh;
+    .link {
+        text-decoration: none;
+        font-size: .9rem;
     }
 
+    .datacontac {
+        padding: 0 1.5rem 0 0;
+        text-align: end;
+    }
+
+    .formacion {
+        font-size: .8rem;
+        padding: 1.5rem 2rem .8rem;
+
+    }
+
+    .contentinfo {
+        padding: .5rem 1.7rem;
+    }
+
+    .date {
+        width: 100px;
+    }
+
+    .date::after {
+        position: absolute;
+        top: 0;
+        right: -12px;
+        content: '✔️';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid var(--bg-primary);
+        text-align: center;
+        font-size: .5rem;
+    }
+
+    .date-info {
+        font-size: .7rem;
+        font-style: italic;
+        padding: .4rem .3rem;
+    }
+
+    .subtime {
+        font-size: .8rem;
+        font-style: italic;
+        padding: 0 0 0 .2rem;
+    }
+
+    .textinfo {
+        padding: 0 0 0 2rem;
+        width: 230px;
+    }
+
+    .name-info {
+        font-size: .9rem;
+    }
+
+    .place-info{
+        font-size: .8rem;
+    }
+
+    .action {
+        padding: 0 0 0 1.2rem;
+        position: relative;
+        font-size: .8rem;
+    }
+
+    .action::before {
+        position: absolute;
+        top: 0;
+        left: -1px;
+        content: '-';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        color: black;
+    }
+
+    .sep {
+        margin-top: .5rem;
+    }
+
+    .lineh {
+        line-height: 1.6;
+    }
+
+    .foo {
+        margin: 10rem 0;
+    }
+
+    .icondes{
+        position: absolute;
+        top: 22px;
+        left: 15px;
+        cursor: pointer;
+        font-size: .8rem;
+    }
+
+    .estudy, .complemento{
+        display: none;
+    }
+
+    .changeup{
+        display: none;
+    }
+    
+    .changedown{
+        display: inline;
+    }
+
+
 }
-
-
